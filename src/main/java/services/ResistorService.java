@@ -7,7 +7,6 @@ public class ResistorService {
     public void converteValorDoResistor(String valorEmOhms) {
         String valorSemOhms = extraiPrimeiroValor(valorEmOhms);
 
-        int numero = 0;
         Integer[] numeros = new Integer[3];
         if (valorSemOhms.endsWith("k")) {
             numeros = calculaValorEmKiloOhms(valorSemOhms);
@@ -15,10 +14,9 @@ public class ResistorService {
             numeros = calculaValorEmMegaOhms(valorSemOhms);
         }
         else {
-            numero = Integer.parseInt(valorSemOhms);
-            if (numero < 100) {
+            if (Integer.parseInt(valorSemOhms) < 100) {
                 numeros = calculaValorMenorQueCemOhms(valorSemOhms);
-            } else if (numero > 100) {
+            } else if (Integer.parseInt(valorSemOhms) > 100) {
                 numeros = calculaValorMaiorQueCem(valorSemOhms);
             }
         }
