@@ -54,7 +54,7 @@ public class ResistorService {
     }
 
     private Integer[] calculaValorMaiorQueCem(String valorEmOhms) {
-        int valorConvertido = Integer.parseInt(valorEmOhms.replace("k", ""));
+        int valorConvertido = Integer.parseInt(valorEmOhms);
 
         Integer[] numeros = new Integer[3];
         numeros[0] = valorConvertido / 100;
@@ -65,7 +65,7 @@ public class ResistorService {
     }
 
     private Integer[] calculaValorMenorQueCemOhms(String valorEmOhms) {
-        int valorConvertido = Integer.parseInt(valorEmOhms.replace("k", ""));
+        int valorConvertido = Integer.parseInt(valorEmOhms);
 
         Integer[] numeros = new Integer[3];
         numeros[0] = valorConvertido / 10;
